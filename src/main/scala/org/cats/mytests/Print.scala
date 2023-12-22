@@ -24,6 +24,7 @@ object Print extends App {
   Printable.print("miao!")
   Printable.print(7)
 
+
   println(Printable.format(4))
 
 }
