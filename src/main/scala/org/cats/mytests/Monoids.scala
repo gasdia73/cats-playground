@@ -15,6 +15,8 @@ object Monoids extends App {
       monoid
   }
 
+  //boolean monoids
+
   val booleanSemigroup: Semigroup[Boolean] = (x, y) => x && y
   val booleanMonoid: Monoid[Boolean] = new Monoid[Boolean] {
     override def empty: Boolean = true
@@ -27,6 +29,13 @@ object Monoids extends App {
 
   assert(booleanMonoid.combine(false, booleanMonoid.empty) == false)
   assert(booleanMonoid.combine(true, booleanMonoid.empty) == true)
+
+  //sets monoids
+  val setSemigroup : Semigroup[Set[_]] = (s1, s2) => s1.concat(s2)
+  val setMonoid : Monoid[Set[_]] = new Monoid[Set[_]] {
+    override def empty: Set[_] = Set.empty
+    override def combine(x: Set[_], y: Set[_]): Set[_] = setSemigroup.combine(x, y)
+  }
 
 
 }
