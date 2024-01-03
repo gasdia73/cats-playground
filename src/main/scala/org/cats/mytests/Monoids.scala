@@ -55,4 +55,6 @@ object Monoids extends App {
     items.foldLeft(monoid.empty)(_ |+| _)
 
   println(add(List(1,3,5,7)))
+  println(add(List(Some(1), Some(1), Some(1), None)))
+  println(add(List("ciao", " ", "mondo", Monoid[String].empty)))
 }
