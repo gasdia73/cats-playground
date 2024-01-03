@@ -57,4 +57,12 @@ object Monoids extends App {
   println(add(List(1,3,5,7)))
   println(add(List(Some(1), Some(1), Some(1), None)))
   println(add(List("ciao", " ", "mondo", Monoid[String].empty)))
+
+  case class Order(totalCost: Double, quantity: Double)
+  implicit val orderMonoid : Monoid[Order] = new Monoid[Order] {
+    override def empty: Order = Order(0.0, 0.0)
+    override def combine(x: Order, y: Order): Order = Order(x.totalCost + y.totalCost, x.quantity + y.quantity)
+  }
+  println(add(List(Order(12.3, 2.2), Order(33.4, 1.1))))
+
 }
