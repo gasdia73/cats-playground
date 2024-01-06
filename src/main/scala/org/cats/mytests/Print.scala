@@ -1,5 +1,7 @@
 package org.cats.mytests
 
+import cats.Show
+
 object Print extends App {
   trait Printable[A] {
     def format(value: A): String
