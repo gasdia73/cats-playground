@@ -24,9 +24,9 @@ object Equiv extends App {
 
   private val catdifferent: Boolean = cat1 =!= cat2
   println(s"are cats different?: ${catdifferent}")
-
-  private val optionEqual: Boolean = optionCat1 === optionCat2
-  println(s"comparing cats options: ${catequal}")
+//
+//  private val optionEqual: Boolean = optionCat1 === optionCat2
+//  println(s"comparing cats options: ${catequal}")
 
 
 }
